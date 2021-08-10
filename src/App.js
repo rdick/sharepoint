@@ -2,6 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+	useEffect(() => {
+		fetch(`/_api/web`, {
+			accept: 'application/json;odata=verbose',
+		})
+		  .then(r => r.json())
+		  .then(console.log)
+		  .catch(console.log);
+	});
   return (
     <div className="App">
       <header className="App-header">
